@@ -22,7 +22,7 @@ header::before {
     top: 0;
     right: 0;
     background-image: linear-gradient(to right, var(--bs-blue), var(--bs-green));
-   
+
     z-index: 2;
     opacity: 0.9;
 }
@@ -61,7 +61,6 @@ div.counter-down {
 div.counter-down span {
     width: 70px;
     height: 80px;
-    display: block;
     border: 1px solid #fff;
     margin: 10px;
     border-radius: 5px;
@@ -129,14 +128,14 @@ section.about .card svg {
 section.about .card:hover svg {
 
     color: var(--bs-green) !important;
-   
+
 }
 
 /* End About */
 
 /* Start Contact Us */
 
-    
+
 
 
 /* End Contact Us */
@@ -164,3 +163,71 @@ footer .container .social-media a {
 
 
 /* End Footer */
+
+
+
+/*timeline css*/
+/* The actual timeline (the vertical ruler) */
+.main-timeline-2 {
+    position: relative;
+}
+
+.main-timeline-2::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    background-color: #26c6da;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+
+}
+
+.timeline-2 {
+    padding: 0 25px 0 25px ;
+    margin-bottom: 4rem;
+    width: 50%;
+    position: relative;
+}
+
+
+.timeline-2::after {
+    content: "";
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    left: -10px;
+    top: 0;
+    bottom: 0;
+    background-color: #26c6da;
+    border-radius: 50%;
+
+}
+.right-2 {
+    right: 50%;
+}
+.right-2::after {
+    right: -14px;
+
+}
+
+@media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .main-timeline-2::after {
+        left: 0;
+    }
+
+    .timeline-2 {
+        width: 100%;
+    }
+
+    .right-2::after {
+        right: 95.50%;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .right-2 {
+        right: 0;
+    }
+
+}
