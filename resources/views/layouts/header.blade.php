@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.rtl.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/fontawesome/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/master.css')}}">
-    <script src="{{url('https://code.jquery.com/jquery-3.6.1.min.js')}}" ></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
     <script src="{{asset('assets/dflip/js/metaboxes.min.js')}}"></script>
     <script src="{{asset('assets/dflip/js/dflip.min.js')}}"></script>
 
@@ -22,25 +23,28 @@
 
 
 <!-- Start Header -->
-    <div class="container-fluid bg-binaa position-absolute mb-3 " style="z-index: 599">
-        <div class="container">
-            <div class="d-flex row justify-content-between align-content-center m-0 p-0">
-                <div class="col-12 col-sm-6">
-                    <p class="text-light fw-bold text-center">قبل المؤتمر | في المؤتمر | بعد المؤتمر </p>
+
+    <div class="container-fluid bg-primary z-3" >
+        <div class="container p-2 d-flex align-content-center">
+                <div class="text-center">
+                    <div class="btn-group border-0" role="group" aria-label="Basic outlined example">
+                        <button type="button" class="btn btn-light">قبل المؤتمر</button>
+                        <button type="button" class="btn btn-outline-light">في المؤتمر</button>
+                        <button type="button" class="btn btn-outline-light">بعد المؤتمر</button>
+                    </div>
                 </div>
-                <div class="text-light fs-3 binaa-text col-12 col-sm-6">
-                    <a href=""><i class="fa-brands fa-youtube p-1"></i></a>
-                    <a href=""><i class="fa-brands fa-twitter p-1"></i></a>
-                    <a href=""><i class="fa-brands fa-facebook p-1"></i></a>
-                    <a href=""><i class="fa-brands fa-instagram p-1"></i></a>
+                <div class="fs-3 binaa-text text-end">
+                    <a href=""><i class="fa-brands fa-youtube "></i></a>
+                    <a href=""><i class="fa-brands fa-twitter mx-2"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook "></i></a>
+                    <a href=""><i class="fa-brands fa-instagram ms-2"></i></a>
                 </div>
             </div>
-        </div>
     </div>
 <header class="position-relative">
     <img src="{{asset('imgs/binaa-naskh.svg')}}" alt="" class="position-absolute bottom-0 start-0 w-25 m-3">
     <!-- Start NavBar -->
-    <nav class="navbar navbar-expand-lg bg-white  shadow-sm position-fixed top-0 start-0 w-100" style="z-index: 99">
+    <nav class="navbar navbar-expand-lg bg-white  shadow-sm  w-100" style="z-index: 99">
         <div class="container">
             <a class="navbar-brand"
                href="#">
@@ -172,7 +176,8 @@
 
 
 <!-- End Footer -->
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('assets/fontawesome/js/all.min.js')}}"></script>
 <script src="{{asset('assets/js/app.js')}}"></script>

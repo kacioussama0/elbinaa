@@ -29,42 +29,36 @@ let counter = setInterval(() => {
 
 
 ///////////////////////////////////////
-/* owlcarousel*/
+/* swiper*/
 ///////////////////////////////////////
-$(function() {
-    // Owl Carousel
-    var owl = $(".owl-carousel");
-    owl.owlCarousel({
-        items: 3,
-        margin: 10,
-        loop: true,
-        nav: true
-    });
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: "4",
+    spaceBetween: 20,
+    loop: true,
+    autoplay: true,
+    speed: 1600,
+
+    breakpoint: {
+        320: {
+            slidesPerView: "1",
+        },
+
+        768: {
+            slidesPerView: "2",
+        },
+
+        1024: {
+            slidesPerView: "3",
+        }
+    }
 
 
 });
 
+///////////////////////////////////////
+/* fqncybox*/
+///////////////////////////////////////
 
-
-
-
-// $('.guests').owlCarousel({
-//     loop:true,
-//     margin:10,
-//     responsiveClass:true,
-//     responsive:{
-//         0:{
-//             items:1,
-//             nav:true
-//         },
-//         600:{
-//             items:3,
-//             nav:false
-//         },
-//         1000:{
-//             items:5,
-//             nav:true,
-//             loop:false
-//         }
-//     }
-// })
+Fancybox.bind('[data-fancybox]', {
+    //
+});

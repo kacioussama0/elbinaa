@@ -114,52 +114,73 @@
 
 
 
-    {{-- carousel--}}
-{{--
-    <section class="container">
+    <!-- Swiper -->
+    <div class="container">
+        <h3 class="text-center display-5 mb-5">ضيوف الشرف</h3>
 
-        <div class="home-demo">
-            <h3>Carousel</h3>
-            <div class="owl-carousel owl-theme">
-                <div class="item">
-                    <h2>Swipe</h2>
+        <div class="swiper mySwiper absolutes">
+            <div class="swiper-wrapper">
+                <div class="card swiper-slide overflow-hidden">
+                    <a
+                       href="{{asset('assets/imgs/per6.jpeg')}}"
+                       data-fancybox
+                       data-caption=" حيقونة عباس">
+                    <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                    </a>
                 </div>
-                <div class="item">
-                    <h2>Drag</h2>
+                <div class="card swiper-slide overflow-hidden">
+                    <a
+                        href="{{asset('assets/imgs/per6.jpeg')}}"
+                       data-fancybox
+                       data-caption="Single image">
+                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                    </a>
                 </div>
-                <div class="item">
-                    <h2>Responsive</h2>
+                <div class="card swiper-slide overflow-hidden">
+                    <a
+                        href="{{asset('assets/imgs/per6.jpeg')}}"
+                       data-fancybox
+                       data-caption="Single image">
+                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                    </a>
                 </div>
-                <div class="item">
-                    <h2>CSS3</h2>
+                <div class="card swiper-slide overflow-hidden">
+                    <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
+                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                    </a>
                 </div>
-                <div class="item">
-                    <h2>Fast</h2>
+                <div class="card swiper-slide overflow-hidden">
+                    <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
+                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                    </a>
                 </div>
-                <div class="item">
-                    <h2>Easy</h2>
+                <div class="card swiper-slide overflow-hidden">
+                    <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
+                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                    </a>
                 </div>
-                <div class="item">
-                    <h2>Free</h2>
+                <div class="card swiper-slide overflow-hidden">
+                    <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
+                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                    </a>
                 </div>
-                <div class="item">
-                    <h2>Upgradable</h2>
+                <div class="card swiper-slide overflow-hidden">
+                    <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
+                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                    </a>
                 </div>
-                <div class="item">
-                    <h2>Tons of options</h2>
-                </div>
-                <div class="item">
-                    <h2>Infinity</h2>
-                </div>
-                <div class="item">
-                    <h2>Auto Width</h2>
+                <div class="card swiper-slide overflow-hidden">
+                    <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
+                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                    </a>
                 </div>
             </div>
-        </div>    </section>
---}}
+
+        </div>
 
 
-    {{-- carousel--}}
+    </div>
+{{--     carousel--}}
 
 
     <!-- Start About Congress -->

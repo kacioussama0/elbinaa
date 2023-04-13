@@ -9,8 +9,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.rtl.min.css')}}">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+
     <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
     <script defer src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
 
@@ -106,7 +105,6 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
     ></script>
-    <script defer src="assets/js/owl.carousel.min.js"></script>
     <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
 
 
