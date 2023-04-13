@@ -9,33 +9,34 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.rtl.min.css')}}">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
-    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+    <script defer src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
-
-        body {
-
-          /*  background-image: linear-gradient(to right, var(--bs-blue), var(--bs-green)); */
-        }
-
         * {
             font-family: 'Almarai', sans-serif !important;
         }
     </style>
-
-
 </head>
 <body>
+
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light opacity-100 bg-white shadow-sm" style="opacity: 100%; !important;">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <img src="{{asset('assets/imgs/logo-binaa.svg')}}" alt="" class=" me-2" style="width: 50px">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -57,7 +58,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('photos') }}">صور</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('faq') }}">اسئلني</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -99,7 +102,13 @@
             @yield('content')
         </main>
     </div>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    ></script>
+    <script defer src="assets/js/owl.carousel.min.js"></script>
     <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+
 
 </body>
 </html>
