@@ -31,28 +31,38 @@ let counter = setInterval(() => {
 ///////////////////////////////////////
 /* swiper*/
 ///////////////////////////////////////
-var swiper = new Swiper(".mySwiper", {
-    slidesPerView: "4",
-    spaceBetween: 20,
-    loop: true,
+
+var swiper = new Swiper(".swiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
     autoplay: true,
-    speed: 1600,
-
-    breakpoint: {
-        320: {
-            slidesPerView: "1",
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 3,
+        slideShadows: true
+    },
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 2
         },
-
         768: {
-            slidesPerView: "2",
+            slidesPerView: 1
         },
-
         1024: {
-            slidesPerView: "3",
+            slidesPerView: 2
+        },
+        1560: {
+            slidesPerView: 3
         }
     }
-
-
 });
 
 ///////////////////////////////////////

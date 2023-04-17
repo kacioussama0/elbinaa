@@ -8,11 +8,11 @@
             <h1 class="display-1 fw-bolder text-white ">المؤتمر الثاني</h1>
             <h4 class="text-white">بصمتنا في عالم جديد</h4>
             <div class="btn btn-outline-light mt-4  w-100"> قريبا</div>
-            <div class="counter-down mt-5 flex-row-reverse">
-                <span  id="day" data-name="يوم"></span>
-                <span  id="hour" data-name="ساعة"></span>
-                <span  id="minute" data-name="دقيقة"></span>
-                <span id="second" data-name="ثانية"></span>
+            <div class="counter-down mt-5 flex-row-reverse ">
+                    <span  id="day" data-name="يوم"></span>
+                    <span  id="hour" data-name="ساعة"></span>
+                    <span  id="minute" data-name="دقيقة"></span>
+                    <span id="second" data-name="ثانية"></span>
             </div>
 
             <div class="d-flex justify-content-between align-items-center mt-5 text-white align-items-center text-center flex-column flex-md-row">
@@ -44,8 +44,8 @@
 
     <!--Start Video -->
 
-    <section>
-        <div class="container my-5">
+    <section class="container-fluid bg-secondary-subtle">
+        <div class="container py-5">
             <h3 class="display-5 text-center">الفيديو الترويجي</h3>
             <iframe
                      class="binaa-vid mt-5 w-100 rounded-3"
@@ -59,8 +59,11 @@
 
     <!--End Video-->
 
+{{--
 @if(count($guests))
-    {{-- Start Guests --}}
+    --}}
+{{-- Start Guests --}}{{--
+
 
     <section>
         <div class="container" id="guests">
@@ -108,84 +111,97 @@
 
     </section>
 
-    {{-- End Guests --}}
+    --}}
+{{-- End Guests --}}{{--
+
 
 @endif
+--}}
 
 
 
     <!-- Swiper -->
-    <div class="container">
-        <h3 class="text-center display-5 mb-5">ضيوف الشرف</h3>
-
-        <div class="swiper mySwiper absolutes">
-            <div class="swiper-wrapper">
-                <div class="card swiper-slide overflow-hidden">
-                    <a
-                       href="{{asset('assets/imgs/per6.jpeg')}}"
-                       data-fancybox
-                       data-caption=" حيقونة عباس">
-                    <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                    </a>
-                </div>
-                <div class="card swiper-slide overflow-hidden">
-                    <a
-                        href="{{asset('assets/imgs/per6.jpeg')}}"
-                       data-fancybox
-                       data-caption="Single image">
-                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                    </a>
-                </div>
-                <div class="card swiper-slide overflow-hidden">
-                    <a
-                        href="{{asset('assets/imgs/per6.jpeg')}}"
-                       data-fancybox
-                       data-caption="Single image">
-                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                    </a>
-                </div>
-                <div class="card swiper-slide overflow-hidden">
-                    <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
-                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                    </a>
-                </div>
-                <div class="card swiper-slide overflow-hidden">
-                    <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
-                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                    </a>
-                </div>
-                <div class="card swiper-slide overflow-hidden">
-                    <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
-                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                    </a>
-                </div>
-                <div class="card swiper-slide overflow-hidden">
-                    <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
-                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                    </a>
-                </div>
-                <div class="card swiper-slide overflow-hidden">
-                    <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
-                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                    </a>
-                </div>
-                <div class="card swiper-slide overflow-hidden">
-                    <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
-                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                    </a>
-                </div>
+<section class="container my-5">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h1 class="guest">ضيوف الشرف</h1>
+                <hr>
+                <p>
+                    تتشرف الحركة في مؤتمرها الثاني
+                    باستقبال"ضيوف الجزائر" <br> من مختلف القارات؛
+                    اهلا و سهلا و مرحبا
+                </p>
             </div>
 
+            <div class="col-12 col-md-6">
+                <div class="swiper mySwiper absolutes">
+                    <div class="swiper-wrapper">
+                    <div class="card swiper-slide overflow-hidden">
+                        <a
+                           href="{{asset('assets/imgs/per6.jpeg')}}"
+                           data-fancybox
+                           data-caption=" حيقونة عباس">
+                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                        </a>
+                    </div>
+                    <div class="card swiper-slide overflow-hidden">
+                        <a
+                            href="{{asset('assets/imgs/per6.jpeg')}}"
+                           data-fancybox
+                           data-caption="Single image">
+                            <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                        </a>
+                    </div>
+                    <div class="card swiper-slide overflow-hidden">
+                        <a
+                            href="{{asset('assets/imgs/per6.jpeg')}}"
+                           data-fancybox
+                           data-caption="Single image">
+                            <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                        </a>
+                    </div>
+                    <div class="card swiper-slide overflow-hidden">
+                        <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
+                            <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                        </a>
+                    </div>
+                    <div class="card swiper-slide overflow-hidden">
+                        <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
+                            <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                        </a>
+                    </div>
+                    <div class="card swiper-slide overflow-hidden">
+                        <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
+                            <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                        </a>
+                    </div>
+                    <div class="card swiper-slide overflow-hidden">
+                        <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
+                            <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                        </a>
+                    </div>
+                    <div class="card swiper-slide overflow-hidden">
+                        <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
+                            <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                        </a>
+                    </div>
+                    <div class="card swiper-slide overflow-hidden">
+                        <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
+                            <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
+                        </a>
+                    </div>
+                </div>
+                    <div class="swiper-pagination"></div>
+                 </div>
+            </div>
         </div>
-
-
-    </div>
-{{--     carousel--}}
+</section>
+{{-- end swiper--}}
 
 
     <!-- Start About Congress -->
 
-    <section class="about position-relative overflow-hidden" id="about-congress">
+    <section class="about position-relative my-5 bg-secondary-subtle" id="about-congress">
         <div class="container py-4" id="about-congress">
 
             <h3 class="display-5 text-center">عن المؤتمر</h3>
@@ -302,13 +318,13 @@
 
     <!-- Start Books -->
 
-    <section class="books ">
+    <section class="books bg-secondary-subtle">
 
-        <div class="container my-5 bord">
+        <div class="container my-5 py-4">
 
             <h3 class="text-center display-5">النشرية</h3>
 
-            <div class="row">
+            <div class="row bord">
 
                 <div class="col-sm-6 col-md-4 col  text-center" >
                     <div class="_df_thumb" source="{{asset('assets/books/1.pdf')}}"  thumb="{{asset('assets/books/1.jpg')}}">
@@ -416,9 +432,8 @@
 
 
 
-    <section>
-
-        <div class="container my-5">
+    <section class="bg-secondary-subtle py-4">
+        <section class="container my-5">
             <h3 class="display-5 text-center">اللجنة الوطنية لتحضير المؤتمر الثاني</h3>
 
             <div class="mt-5">
@@ -471,7 +486,7 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </section>
     </section>
 
 
@@ -481,7 +496,6 @@
 
 
     <!-- Start Congress Place -->
-
 
     <section>
 
@@ -545,10 +559,11 @@
     <!-- End Congress Place -->
 
     {{-- schedule start--}}
+    <section class="bg-secondary-subtle py-3">
     <section class="container ">
-        <h3 class="text-center display-5 mb-5 overflow-hidden "> برنامج المؤتمر</h3>
+        <h3 class="text-center display-5 mb-3 "> برنامج المؤتمر</h3>
 
-        <div class="scheduleContainer mt-3 overflow-auto">
+        <div class="scheduleContainer mt-4 overflow-auto">
 
             <!-- TIMES -->
             <div class="time start-800"><div class="marker quran"></div>10:00</div>
@@ -605,12 +620,12 @@
                 <span>/</span></div>
             <div class="event b-vote start-1630 end-2030 length-1">الانتخابات <span>/</span></div>
 
-            <div class="event bg-white text-dark border start-2100 end-2100 length-4">الاختتام <span>/</span></div>
+            <div class="event text-dark border start-2100 end-2100 length-4">الاختتام <span>/</span></div>
 
         </div>
 
     </section>
-
+    </section>
 
     {{-- schedule start--}}
 

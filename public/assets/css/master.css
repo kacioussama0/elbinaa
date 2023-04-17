@@ -8,7 +8,7 @@
 
 /* End Global Rules */
 
-/*  Start Header  */
+/*/////////////////////////// start  header ///////////////////////////*/
 
 .binaa-text > a {
     color: white;
@@ -108,7 +108,8 @@ div.counter-down span::before {
     }
 }
 
-/*  End Header  */
+/*/////////////////////////// end header ///////////////////////////*/
+
 
 
 @media (max-width: 768px) {
@@ -125,17 +126,32 @@ div.counter-down span::before {
 
 
 
+/*/////////////////////////// swiper ///////////////////////////*/
 
-/* swiper*/
-.swiper-wrapper > .card {
-    width: 11rem !important;
-    height: 300px !important;
+
+section .guest  {
+    font-weight: 900;
+    font-size: clamp(2.4375rem, 3.25rem + 0.75vw, 4rem);
+    background-color: #3f56a2;
+    background-image: linear-gradient(45deg, var(--bs-blue), var(--bs-green));
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
 }
 
+section > div hr {
+    display: block;
+    background: #3f56a2 !important;
+    height: 0.25rem;
+    width: 6.25rem;
+    border: none;
+    margin: 1.125rem 0 1.875rem 0;
+}
 
 .swiper {
-    height: 40vh;
-    position: relative;
+    width: 100%;
 }
 
 .swiper-slide > a > img {
@@ -143,11 +159,17 @@ div.counter-down span::before {
     height: 100%;
     object-fit: cover;
 }
+/* pagination*/
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+    background: #fff !important;
+}
 
-/* swiper*/
+
+/*/////////////////////////// swiper ///////////////////////////*/
 
 
-/*  Start About  */
+/*/////////////////////////// start about ///////////////////////////*/
 
 section.about  .card {
     min-height: 290px !important;
@@ -162,7 +184,10 @@ section.about  .card:hover {
     transition: 1000ms;
 }
 
-/* End About */
+/*/////////////////////////// end about ///////////////////////////*/
+
+
+/*/////////////////////////// border of magazines ///////////////////////////*/
 
 .bord {
     border: var(--bs-secondary) solid 1px ;
@@ -170,8 +195,9 @@ section.about  .card:hover {
     padding: 1.5rem;
 }
 
+/*/////////////////////////// end border ///////////////////////////*/
 
-/* Start table */
+/*/////////////////////////// tables ///////////////////////////*/
 
 .table-section {
     display: grid;
@@ -206,16 +232,17 @@ td {
 }
 
 tr:nth-child(even) {
-    background-color: #f4f6fb;
+    background-color: #F0F9FF;
 }
 
 tr > td:nth-child(odd) {
     font-weight: 700 !important;
 }
 
-/* End table */
+/*/////////////////////////// end table ///////////////////////////*/
 
-/* schedule */
+/*/////////////////////////// scheduling event ///////////////////////////*/
+
 .scheduleContainer {
     display: grid;
     grid-gap: 0.2rem;
@@ -253,8 +280,9 @@ tr > td:nth-child(odd) {
 }
 
 /**
- * Time
- */
+ * Time  */
+
+
 .time {
     display: flex;
     align-items: center;
@@ -559,6 +587,10 @@ tr > td:nth-child(odd) {
 .event.length-4 {
     grid-column-end: span 4;
 }
+
+/*
+* event colors and border colors
+*/
 .quran {background-color: #168287;}
 
 .b-quran{border:1px solid #168287;}
@@ -587,11 +619,13 @@ tr > td:nth-child(odd) {
 
 .b-vote {border:1px solid crimson;}
 
-/* End Footer */
+/*/////////////////////////// end scheduling event ///////////////////////////*/
 
 
 
-/*timeline css*/
+
+/*/////////////////////////// timeline ///////////////////////////*/
+
 /* The actual timeline (the vertical ruler) */
 .main-timeline-2 {
     position: relative;
@@ -656,3 +690,4 @@ tr > td:nth-child(odd) {
     }
 
 }
+/*/////////////////////////// end time line ///////////////////////////*/
