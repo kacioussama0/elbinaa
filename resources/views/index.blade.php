@@ -2,13 +2,38 @@
 
 
 @section('addition')
+
+
     <!-- Start Landing Page -->
-    <section class="landing-page w-100 h-100 position-absolute top-0 start-0 " id="home">
-        <div class="position-absolute top-50 start-50 translate-middle z-2 text-center text-md-start">
-            <h1 class="display-1 fw-bolder text-white ">المؤتمر الثاني</h1>
-            <h4 class="text-white">بصمتنا في عالم جديد</h4>
-            <div class="btn btn-outline-light mt-4  w-100"> قريبا</div>
-            <div class="counter-down mt-5 flex-row-reverse ">
+    <section class="landing-page w-100 h-100 position-absolute top-0 start-0 py-5 " id="home">
+        <div class="position-absolute top-50 start-50 translate-middle z-2 text-center text-xl-start">
+            <h1 class="title fw-bolder text-white mt-5 pt-3 text-center">حركة البناء الوطني</h1>
+{{--
+            <h2 class="display-6 fw-bolder text-white text-center" dir="ltr">National Mouvement ElBinaa</h2>
+--}}
+
+            <div class="d-flex  align-items-center align-items-lg-end  flex-column flex-lg-row">
+                <span>
+                    <h3 class=" fw-bold text-white title-1 text-lg-start">المؤتمر الثاني</h3>
+{{--
+                    <h3 class="display-4 fw-bold text-white">Second Congress</h3>
+--}}
+                </span>
+                <img src="{{asset('assets/imgs/basmaa-white.svg')}}"
+                     alt=""
+                     width="85"
+                     class="mx-2">
+                <h4 class="text-white text-end fw-lighter">بصمتنا في عالم جديد</h4>
+            </div>
+
+
+            @if(date("Y/m/d") != "2023/05/06")
+                <div class="btn btn-outline-light mt-4 fs-3  w-100">قريبا</div>
+            @else
+                <div class="btn btn-outline-light mt-4 fs-3  w-100">بدأ المؤتمر</div>
+            @endif
+
+            <div class="counter-down mt-5 flex-row">
                     <span  id="day" data-name="يوم"></span>
                     <span  id="hour" data-name="ساعة"></span>
                     <span  id="minute" data-name="دقيقة"></span>
@@ -16,16 +41,16 @@
             </div>
 
             <div class="d-flex justify-content-between align-items-center mt-5 text-white align-items-center text-center flex-column flex-md-row">
-                    <div class="d-inline ">
+                    <div>
                         <i class="fa-duotone fa-calendar-days fa-2x text-white mb-2"></i>
                         <h6 class="lh-lg">
-                             06 ماي 2023.
-                            <br> 10 سا صباحا
+                             06 ماي 2023
+                             09 سا صباحا
                         </h6>
 
                     </div>
 
-                <div class="d-inline ">
+                <div>
                         <i class="fa-duotone fa-location-dot fa-2x text-white mb-2"></i>
                         <h6 class="lh-lg"> المركز الدولي للمؤتمرات <br> عبد اللطيف رحالي </h6>
                 </div>
@@ -44,164 +69,89 @@
 
     <!--Start Video -->
 
-    <section class="container-fluid bg-secondary-subtle">
-        <div class="container py-5">
-            <h3 class="display-5 text-center">الفيديو الترويجي</h3>
-            <iframe
-                     class="binaa-vid mt-5 w-100 rounded-3"
-                     src="https://www.youtube.com/embed/MvR7fc4YunA?controls=0"
-                     title="YouTube video player"
-                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                     allowfullscreen>
-            </iframe>
+    <section class="container">
+        <div class="row py-5">
+            <div class="col-12 col-lg-6  ">
+                <h3 class="display-5 text-center">الفيديو الترويجي</h3>
+                <iframe width="560" class="mx-auto d-block my-5 w-100 rounded-3 binaa-vid" height="300"
+                        src="https://www.youtube-nocookie.com/embed/MvR7fc4YunA"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; "
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="col-12 col-lg-6">
+                <h3 class="display-5 text-center ">أنشودة المؤتمر</h3>
+                    <div class="card my-5 flex-row d-flex align-items-center px-3 py-5 border-0 shadow-sm">
+                        <div class="w-75 md-w" id="waveform"></div>
+                        <div class="controls">
+                            <button class="btn btn-dark audio-btn ms-3"
+                                    style="width: 150px"
+                                    onclick="wavesurfer.playPause()">
+                                <i class="fa-duotone fa-play-pause"></i>
+                            </button>
+                        </div>
+                    </div>
+            </div>
         </div>
     </section>
 
     <!--End Video-->
 
-{{--
+
+
+
+
 @if(count($guests))
-    --}}
-{{-- Start Guests --}}{{--
-
-
-    <section>
-        <div class="container" id="guests">
-            <h3 class="text-center display-5 mb-5">ضيوف الشرف</h3>
-
-            <div id="carouselExampleIndicators" class="carousel slide w-50 mx-auto rounded-3 overflow-hidden">
-                <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                @foreach($guests->skip(1) as $key => $image)
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$key}}" aria-label="Slide {{$key + 1}}"></button>
-                    @endforeach
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="{{asset('storage/'.$guests[0]->path)}}" class="d-block w-100" alt="...">
-                    </div>
-                    @foreach($guests->skip(1) as $image)
-
-                        <div class="carousel-item">
-                            <img src="{{asset('storage/'.$image->path)}}" class="d-block w-100" alt="...">
-                        </div>
-
-                    @endforeach
-
-                </div>
-
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                          <span  aria-hidden="true">
-                            <i class="fa-duotone fa-chevrons-right fa-3x"></i>
-                          </span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                          <span  aria-hidden="true">
-                            <i class="fa-duotone fa-chevrons-left fa-3x"></i>
-                          </span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-    --}}
-{{-- End Guests --}}{{--
-
-
-@endif
---}}
-
-
-
     <!-- Swiper -->
-<section class="container my-5">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <h1 class="guest">ضيوف الشرف</h1>
-                <hr>
-                <p>
-                    تتشرف الحركة في مؤتمرها الثاني
-                    باستقبال"ضيوف الجزائر" <br> من مختلف القارات؛
-                    اهلا و سهلا و مرحبا
-                </p>
-            </div>
+<section class="my-5  bg-secondary-subtle ">
+       <div class="container py-5">
 
-            <div class="col-12 col-md-6">
-                <div class="swiper mySwiper absolutes">
-                    <div class="swiper-wrapper">
-                    <div class="card swiper-slide overflow-hidden">
-                        <a
-                           href="{{asset('assets/imgs/per6.jpeg')}}"
-                           data-fancybox
-                           data-caption=" حيقونة عباس">
-                        <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                        </a>
-                    </div>
-                    <div class="card swiper-slide overflow-hidden">
-                        <a
-                            href="{{asset('assets/imgs/per6.jpeg')}}"
-                           data-fancybox
-                           data-caption="Single image">
-                            <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                        </a>
-                    </div>
-                    <div class="card swiper-slide overflow-hidden">
-                        <a
-                            href="{{asset('assets/imgs/per6.jpeg')}}"
-                           data-fancybox
-                           data-caption="Single image">
-                            <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                        </a>
-                    </div>
-                    <div class="card swiper-slide overflow-hidden">
-                        <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
-                            <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                        </a>
-                    </div>
-                    <div class="card swiper-slide overflow-hidden">
-                        <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
-                            <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                        </a>
-                    </div>
-                    <div class="card swiper-slide overflow-hidden">
-                        <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
-                            <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                        </a>
-                    </div>
-                    <div class="card swiper-slide overflow-hidden">
-                        <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
-                            <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                        </a>
-                    </div>
-                    <div class="card swiper-slide overflow-hidden">
-                        <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
-                            <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                        </a>
-                    </div>
-                    <div class="card swiper-slide overflow-hidden">
-                        <a href="{{asset('assets/imgs/per6.jpeg')}}" data-fancybox data-caption="Single image">
-                            <img src="{{asset('assets/imgs/per6.jpeg')}}" class="card-img-top" alt="...">
-                        </a>
-                    </div>
-                </div>
-                    <div class="swiper-pagination"></div>
-                 </div>
-            </div>
-        </div>
+
+           <div class="row ">
+               <div class="col-12 col-md-6">
+                   <h1 class="guest" id="guests">ضيوف الشرف</h1>
+                   <hr>
+                   <p class="lh-lg">
+                       تتشرف الحركة في مؤتمرها الثاني
+                       باستقبال"ضيوف الجزائر" <br> من مختلف القارات؛
+                       اهلا و سهلا و مرحبا
+                   </p>
+               </div>
+
+               <div class="col-12 col-md-6">
+                   <div class="swiper">
+                       <div class="swiper-wrapper">
+
+                           @foreach($guests as $image)
+
+                               <div class="card swiper-slide">
+                                   <a
+                                       href="{{asset('storage/'.$image->path)}}"
+                                       data-fancybox
+                                       data-caption="">
+                                       <img src="{{asset('storage/'.$image->path)}}" class="card-img-top" alt="...">
+                                   </a>
+                               </div>
+
+
+
+                           @endforeach
+
+                       </div>
+                       <div class="swiper-pagination"></div>
+                   </div>
+               </div>
+           </div>
+       </div>
 </section>
 {{-- end swiper--}}
+@endif
 
 
     <!-- Start About Congress -->
 
-    <section class="about position-relative my-5 bg-secondary-subtle" id="about-congress">
+    <section class="about position-relative my-5 py-5" id="about-congress">
         <div class="container py-4" id="about-congress">
 
             <h3 class="display-5 text-center">عن المؤتمر</h3>
@@ -209,11 +159,11 @@
             <div class="row mt-5 g-4">
 
                 <div class="col-12 col-md-6 col-lg-4 ">
-                    <div class="card text-center rounded-3  ">
+                    <div class="card text-center rounded-3  border-0 shadow-sm">
                         <div class="card-body p-5">
                             <i class="fa-duotone  fa-eye fa-4x text-center text-primary mb-3"></i>
                             <h5 class="card-title fw-bolder mb-3">الرؤية</h5>
-                            <p class="card-text">أن يكون مؤتمرنا الثاني منبراً للأنطلاقة نحو تثبيت المكتسبات السياسية، و المشاركة الفعالة.</p>
+                            <p class="card-text lh-lg">أن يكون مؤتمرنا الثاني منبراً للأنطلاقة نحو تثبيت المكتسبات السياسية، و المشاركة الفعالة.</p>
                         </div>
                     </div>
 
@@ -221,21 +171,21 @@
 
 
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card text-center rounded-3 ">
+                    <div class="card text-center rounded-3  border-0 shadow-sm">
                         <div class="card-body p-5">
                             <i class="fa-duotone fa-envelope fa-4x text-center text-primary mb-3"></i>
                             <h5 class="card-title fw-bolder mb-3">الرسالة</h5>
-                            <p class="card-text">إبراز أهمية العمل السياسي و النضال الحزبي، وأثرهما في تفعيل التنافسية الشريفة وسبل التنمية.</p>
+                            <p class="card-text lh-lg">إبراز أهمية العمل السياسي و النضال الحزبي، وأثرهما في تفعيل التنافسية الشريفة وسبل التنمية.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-12 col-lg-4">
-                    <div class="card text-center rounded-3 ">
+                    <div class="card text-center rounded-3  border-0 shadow-sm">
                         <div class="card-body p-5">
                             <i class="fa-duotone fa-question fa-4x text-center text-primary mb-3"></i>
                             <h5 class="card-title fw-bolder mb-3 ">من نحن</h5>
-                            <p class="card-text">
+                            <p class="card-text lh-lg">
                                 حزب وطني محافظ يعمل من أجل البناء المتكامل لتحقيق الإصلاح والتنمية الشاملة في إطار مرجعية الأمة الجزائرية ويسعى لرفاهية المجتمع وإسعاده.
                             </p>
                         </div>
@@ -255,9 +205,9 @@
 
     <!-- Start Documents -->
 
-    <section class="documents" id="documents">
+    <section class="documents bg-secondary-subtle py-5 my-5" id="documents">
 
-        <div class="container py-4 my-5">
+        <div class="container">
 
             <h3 class="display-5 text-center">وثائق المؤتمر</h3>
 
@@ -265,99 +215,250 @@
                 <div class="order-1 order-lg-0 col-lg-6">
                     <div class="row">
 
-
                         <div class="col-md-6 mb-3">
-                            <div class="card text-center border-0 rounded-3 shadow">
+                            <div class="card text-center border-0 rounded-3 shadow-sm fency-border p-3">
                                 <div class="card-body">
-                                    <i class="fa-duotone fa-gavel fa-3x text-center text-success  mb-3"></i>
+                                    <i class="fa-duotone fa-gavel fa-3x text-center text-primary  mb-3"></i>
                                     <h5 class="card-title fw-bolder mb-3 ">القانون الاساسي</h5>
-                                    <a href="#" class="btn btn-primary px-5">تحميل</a>
+                                    <a href="#" class="btn text-primary fw-bolder ">
+                                        <i class="fa-duotone fa-download text-primary me-1"></i>
+                                        تحميل
+                                    </a>
                                 </div>
                             </div>
                         </div>
-
 
                         <div class="col-md-6 mb-3">
-                            <div class="card text-center border-0 rounded-3 shadow">
+                            <div class="card text-center border-0 rounded-3 shadow-sm fency-border p-3">
                                 <div class="card-body">
-                                    <i class="fa-duotone fa-shield-check fa-3x text-center text-success  mb-3"></i>
-                                    <h5 class="card-title fw-bolder mb-3 ">البروتوكول </h5>
-                                    <a href="#" class="btn btn-primary px-5">تحميل</a>
+                                    <i class="fa-duotone fa-user-tie fa-3x text-center text-primary  mb-3"></i>
+                                    <h5 class="card-title fw-bolder mb-3 ">خطاب رئيس الحركة </h5>
+                                    <a href="#" class="btn text-primary fw-bolder ">
+                                        <i class="fa-duotone fa-download text-primary me-1"></i>
+                                        تحميل
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
-
-                        <div class="col-md-12 mb-3">
-                            <div class="card text-center border-0 rounded-3 shadow">
+                        <div class="col-md-6 mb-3">
+                            <div class="card text-center border-0 rounded-3 shadow-sm fency-border p-3">
                                 <div class="card-body">
-                                    <i class="fa-duotone fa-scale-balanced fa-3x text-center text-success  mb-3"></i>
+                                    <i class="fa-duotone fa-scale-balanced fa-3x text-center text-primary  mb-3"></i>
                                     <h5 class="card-title fw-bolder mb-3 ">السياسة العامة</h5>
-                                    <a href="#" class="btn btn-primary px-5">تحميل</a>
+
+                                    <a href="#" class="btn text-primary fw-bolder ">
+                                        <i class="fa-duotone fa-download text-primary me-1"></i>
+                                        تحميل
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <div class="card text-center border-0 rounded-3 shadow-sm fency-border p-3">
+                                <div class="card-body">
+                                    <i class="fa-duotone fa-file-lines fa-3x text-center text-primary  mb-3"></i>
+                                    <h5 class="card-title fw-bolder mb-3 ">وثائق أخرى</h5>
+
+                                    <a href="#" class="btn text-primary fw-bolder ">
+                                        <i class="fa-duotone fa-download text-primary me-1"></i>
+                                        تحميل
+                                    </a>
+
                                 </div>
                             </div>
                         </div>
 
                     </div>
-
-
-
                 </div>
 
                 <div class="col-lg-5 offset-lg-1 mb-lg-0 mb-5">
-                    <img src="{{asset('assets/imgs/basmaa.svg')}}" alt="" class="img-fluid">
+                    <img src="{{asset('assets/imgs/basma-1.svg')}}" alt="" class="img-fluid">
                 </div>
         </div>
     </div>
 </section>
 
-
-
     <!-- End Documents -->
+
+
+{{-- start schudel--}}
+
+    <div class="container" >
+        <div class="row scrollbar">
+            <div class="col-md-12">
+                <div class="page-header text-center" id="schedule">
+                    <h1>برنامج المؤتمر</h1>
+                </div>
+                <div class="scroll"
+                     style="display:inline-block;width:100%;">
+                    <ul class="timeline timeline-horizontal">
+                        <li class="timeline-item">
+                            <div class="timeline-badge danger">من 9 صباحا</div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">حفل الإفتتاح</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge danger"></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">اشغال المؤتمر</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge danger"></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">الجلسة الأولى</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge danger"></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">الجلسة الثانية</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge warning">على 15:30</div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">استراحة صلاة و غداء</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge info">على 18:30</div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">الجلسة الثالثة</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge info"></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">الجلسة الرابعة</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge info"></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">فعاليات مختلفة</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge primary">00:00</div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">إختتام</h4>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{-- start schudel--}}
+
+
+    {{--Banner--}}
+
+    <section  class="my-5 book-ads">
+        <div class="image position-relative">
+            <img src="{{asset('assets/imgs/banner.jpg')}}" alt="" style="height: 450px" class="w-100 object-fit-cover">
+            <div class="container position-absolute start-50 top-50 translate-middle">
+                    <h1 class="text-white display-1 fw-bolder mb-3"> المجلة <br>  الترويجية</h1>
+                    <p class="text-white">
+                        <span class="fw-bolder">عدد الصفحات :</span>
+                        126 صفحة
+                        <br>
+                        <span class="fw-bolder">المؤلف :</span>
+                        بأقلام اصدقائه و محبيه
+                    </p>
+               <div class="d-flex justify-content-start">
+                <button class="btn btn-lg btn-light  text-primary">
+                    <i class="fa-solid me-2 fa-bookmark"></i>
+                    احجز نسختك
+                </button>
+
+               </div>
+
+            </div>
+        </div>
+    </section>
+
+    {{--Banner--}}
 
 
     <!-- Start Books -->
 
-    <section class="books bg-secondary-subtle">
+    <section class="books">
 
-        <div class="container my-5 py-4">
+        <div class="container my-5 py-5">
 
             <h3 class="text-center display-5">النشرية</h3>
 
-            <div class="row bord">
+            <div class="row mt-5">
 
-                <div class="col-sm-6 col-md-4 col  text-center" >
-                    <div class="_df_thumb" source="{{asset('assets/books/1.pdf')}}"  thumb="{{asset('assets/books/1.jpg')}}">
+                <div class="col-sm-6 col-md-4 text-center" >
+                    <div class="_df_thumb"
+                         source="{{asset('assets/books/1.pdf')}}"
+                         thumb="{{asset('assets/books/1.jpg')}}">
                         نشرية مؤتمرنا العدد رقم 01
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-md-4  col  text-center" >
-                    <div class="_df_thumb" source="{{asset('assets/books/2.pdf')}}"  thumb="{{asset('assets/books/2.jpg')}}">
+                <div class="col-sm-6 col-md-4 text-center" >
+                    <div class="_df_thumb"
+                         source="{{asset('assets/books/2.pdf')}}"
+                         thumb="{{asset('assets/books/2.jpg')}}">
                         نشرية مؤتمرنا العدد رقم 02
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-md-4 col  text-center" >
-                    <div class="_df_thumb" source="{{asset('assets/books/3.pdf')}}"  thumb="{{asset('assets/books/3.jpg')}}">
+                <div class="col-sm-6 col-md-4 text-center" >
+                    <div class="_df_thumb"
+                         source="{{asset('assets/books/3.pdf')}}"
+                         thumb="{{asset('assets/books/3.jpg')}}">
                         نشرية مؤتمرنا العدد رقم 03
                     </div>
                 </div>
 
                 <div class="col-sm-6 col-md-4 col  text-center" >
-                    <div class="_df_thumb" source="{{asset('assets/books/4.pdf')}}"  thumb="{{asset('assets/books/4.jpg')}}">
+                    <div class="_df_thumb"
+                         source="{{asset('assets/books/4.pdf')}}"
+                         thumb="{{asset('assets/books/4.jpg')}}">
                         نشرية مؤتمرنا العدد رقم 04
                     </div>
                 </div>
 
                 <div class="col-sm-6 col-md-4 col  text-center" >
-                    <div class="_df_thumb" source="{{asset('assets/books/5.pdf')}}"  thumb="{{asset('assets/books/5.jpg')}}">
+                    <div class="_df_thumb"
+                         source="{{asset('assets/books/5.pdf')}}"
+                         thumb="{{asset('assets/books/5.jpg')}}">
                         نشرية مؤتمرنا العدد رقم 05
                     </div>
                 </div>
 
                 <div class="col-sm-6 col-md-4  col  text-center" >
-                    <div class="_df_thumb" source="{{asset('assets/books/6.pdf')}}"  thumb="{{asset('assets/books/6.jpg')}}">
+                    <div class="_df_thumb"
+                         source="{{asset('assets/books/6.pdf')}}"
+                         thumb="{{asset('assets/books/6.jpg')}}">
                         نشرية مؤتمرنا العدد رقم 06
                     </div>
                 </div>
@@ -374,16 +475,16 @@
 
     <!-- Start Participant -->
 
+    <section class="bg-secondary-subtle py-5 my-5">
 
-    <section>
+        <div class="container">
 
-        <div class="container my-5">
-            <h3 class="display-5 text-center">مهام المندوب</h3>
+            <h3 class="display-5 text-center mb-5"> مهام المندوب في مؤتمرنا</h3>
 
-            <div class="mt-5">
-                <table class="table table-responsive mx-auto">
-                    <thead>
-                        <tr class="text-primary">
+                <div class="table-responsive mt-5">
+                <table class="table fs-5 bg-white rounded-3">
+                    <thead class="text-primary">
+                        <tr class="fs-3">
                             <th>الحقوق</th>
                             <th>الواجبات </th>
                         </tr>
@@ -393,12 +494,12 @@
 
                         <tr>
                             <td>المشاركة الفعّالة في جلسات المؤتمر</td>
-                            <td>حمل وتعليق الشارة الخاصة بالمؤتمر(پاچ)</td>
+                            <td>حمل وتعليق الشارة الخاصة بالمؤتمر(badge)</td>
                         </tr>
 
                         <tr>
                             <td>المناقشة وتقديم الرأي و المقترحات</td>
-                            <td>استظهار البطاقة الوطنية عمد الاقتضاء</td>
+                            <td>استظهار الدعوة و البطاقة الوطنية عند الاقتضاء</td>
                         </tr>
 
                         <tr>
@@ -417,22 +518,17 @@
                         </tr>
 
                         <tr>
-                            <td> واجب </td>
+                            <td> خدمات ضرورية </td>
                             <td>الالتزام بقيم الحركة وادبياتها</td>
                         </tr>
-
                     </tbody>
                 </table>
             </div>
+
         </div>
     </section>
 
-
-
-
-
-
-    <section class="bg-secondary-subtle py-4">
+    <section class="py-4">
         <section class="container my-5">
             <h3 class="display-5 text-center">اللجنة الوطنية لتحضير المؤتمر الثاني</h3>
 
@@ -447,40 +543,41 @@
                     <tbody>
 
                         <tr>
-                            <td>حسان بورنين</td>
-                            <td>مختار مناص</td>
+                            <td>د.حسان بورنين</td>
+                            <td>أ.مختار مناص</td>
                         </tr>
 
                         <tr>
-                            <td>علال بوشوك</td>
-                            <td>علي سعداوي</td>
+                            <td>أ.علال بوشوك</td>
+                            <td>أ.علي سعداوي</td>
                         </tr>
 
                         <tr>
-                            <td>سعادة الشيخ</td>
-                            <td>جميلة محمدي</td>
+                            <td>د.سعادة الشيخ</td>
+                            <td>د.جميلة محمدي</td>
                         </tr>
 
                         <tr>
-                            <td>أم انفال لطيفة</td>
-                            <td>آسيا نحناح</td>
+                            <td>د.أم انفال لطيفة</td>
+                            <td>د.آسيا نحناح</td>
                         </tr>
 
                         <tr>
-                            <td>عبد الحميد شبوطي</td>
-                            <td>عبد العزيز بن بردي</td>
+                            <td>د.عبد الحميد شبوطي</td>
+                            <td>أ.عبد العزيز بن بردي</td>
                         </tr>
 
                         <tr>
-                            <td>محمد تيجيني</td>
-                            <td>مهدي مفتاحي</td>
+                            <td>د.محمد تيجيني</td>
+                            <td>أ.مهدي مفتاحي</td>
                         </tr>
                         <tr>
-                            <td>عبد الوهاب قلعي</td>
-                            <td>جمال الطاعني</td>
+                            <td>أ.عبد الوهاب قلعي</td>
+                            <td>أ.جمال الطاعني</td>
                         </tr>
                         <tr>
-                            <td>سعيد نفيسي</td>
+                            <td colspan="2">أ.سعيد نفيسي</td>
+
                         </tr>
 
                     </tbody>
@@ -489,18 +586,46 @@
         </section>
     </section>
 
-
     <!-- End Participant -->
 
 
+    {{--Start Posts --}}
+<section class="bg-secondary-subtle py-5 my-5">
+
+    <div class="container">
+
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            @foreach($catPosts as $category)
+            <h3 class="display-5 text-center mb-5">{{$category->name}}</h3>
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+
+                @foreach($category->posts as $post)
+
+                <div class=" swiper-slide">
+                    <a href="{{url('posts/' . $post -> slug)}}" class="stretched-link"></a>
+                    <div class="card Catpost h-100 position-relative text-bg-dark border-0 shadow-sm overflow-hidden" style="max-height: 25rem">
+                        <img src="{{asset('storage/' . $post -> thumbnail)}}"
+                             class="card-img " alt="...">
+                        <div class="card-img-overlay ">
+                            <p class="card-text card-content">{!! Str::limit(strip_tags($post -> content) ,150)!!}</p>
+                            <p class="card-title">{!! Str::limit(strip_tags($post -> name) ,50)!!}</p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+    {{--End Posts --}}
 
 
     <!-- Start Congress Place -->
 
-    <section>
-
-        <div class="container my-5">
-
+        <div class="container my-5 py-5">
             <h3 class="text-center display-5">التعريف بالمركز</h3>
 
             <div class="row align-items-center mt-5 text-lg-start text-center">
@@ -511,23 +636,21 @@
                         <h3 class="text-success">قاعة المحاضرات</h3>
 
                             <div class="d-flex justify-content-between align-items-center mt-4">
-                            <span>
-                                <i class="fa-duotone fa-users fa-2x"></i>
-                                <p class="mt-2">6000 شخص</p>
-                            </span>
-
-                                <span>
-                                <i class="fa-duotone fa-layer-group fa-2x"></i>
-                                <p class="mt-2">287.500 متر<sup>2</sup></p>
-                            </span>
-
+                                <div>
+                                    <i class="fa-duotone fa-users fa-2x"></i>
+                                    <p class="mt-2">6000 شخص</p>
+                                </div>
+                                <div>
+                                    <i class="fa-duotone fa-layer-group fa-2x"></i>
+                                    <p class="mt-2">287.500 متر<sup>2</sup></p>
+                                </div>
                             </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6 mb-lg-0 mb-5">
                     <div id="carouselExample" class="carousel slide w-100  rounded-3 border-5 border-success overflow-hidden">
-                        <div class="carousel-inner">
+                        <div class="carousel-inner" style="max-height: 250px">
                             <div class="carousel-item active">
                                 <img src="{{asset('assets/imgs/1.jpg')}}" class="d-block w-100" alt="...">
                             </div>
@@ -536,6 +659,15 @@
                             </div>
                             <div class="carousel-item">
                                 <img src="{{asset('assets/imgs/3.jpg')}}" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{asset('assets/imgs/4.jpg')}}" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{asset('assets/imgs/5.jpg')}}" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{asset('assets/imgs/6.jpg')}}" class="d-block w-100" alt="...">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -554,115 +686,20 @@
                 </div>
             </div>
         </div>
-    </section>
-
+=
     <!-- End Congress Place -->
-
-    {{-- schedule start--}}
-    <section class="bg-secondary-subtle py-3">
-    <section class="container ">
-        <h3 class="text-center display-5 mb-3 "> برنامج المؤتمر</h3>
-
-        <div class="scheduleContainer mt-4 overflow-auto">
-
-            <!-- TIMES -->
-            <div class="time start-800"><div class="marker quran"></div>10:00</div>
-            <div class="time start-830"><div class="marker quran"></div>10:30</div>
-            <div class="time start-900"><div class="marker speaking"></div>11:00</div>
-            <div class="time start-930"><div class="marker video"></div>11:30</div>
-            <div class="time start-1000"><div class="marker video"></div>12:00</div>
-            <div class="time start-1030"><div class="marker speaking"></div>12:30</div>
-            <div class="time start-1100"><div class="marker speaking"></div>13:00</div>
-            <div class="time start-1130"><div class="marker speaking"></div>13:30</div>
-            <div class="time start-1200"><div class="marker speaking"></div>14:00</div>
-            <div class="time start-1230"><div class="marker work"></div>14:30</div>
-            <div class="time start-1300"><div class="marker speaking"></div>15:00</div>
-            <div class="time start-1330"><div class="marker speaking"></div>15:30</div>
-            <div class="time start-1400"><div class="marker eating-prayers"></div>16:00</div>
-            <div class="time start-1430"><div class="marker eating-prayers"></div>16:30</div>
-            <div class="time start-1500"><div class="marker eating-prayers"></div>17:00</div>
-            <div class="time start-1530"><div class="marker eating-prayers"></div>17:30</div>
-            <div class="time start-1600"><div class="marker eating-prayers"></div>18:00</div>
-            <div class="time start-1630"><div class="marker work"></div>18:30</div>
-            <div class="time start-1700"><div class="marker work"></div>19:00</div>
-            <div class="time start-1730"><div class="marker speaking"></div>19:30</div>
-            <div class="time start-1800"><div class="marker speaking"></div>20:00</div>
-            <div class="time start-1830"><div class="marker speaking"></div>20:30</div>
-            <div class="time start-1900"><div class="marker speaking"></div>21:00</div>
-            <div class="time start-1930"><div class="marker vote"></div>22:30</div>
-            <div class="time start-2000"><div class="marker vote"></div>23:00</div>
-            <div class="time start-2030"><div class="marker vote"></div>23:30</div>
-            <div class="time start-2100"><div class="marker"></div>00:00</div>
-            <div class="time start-2130 invisible">21:30</div>
-
-            <!-- EVENTS -->
-            <div class="event b-quran lh-lg start-800 end-830 length-4"> الافتتاح بالقران الكريم <br> و النشيد الوطني <br> انشودة المؤتمر </div>
-            <div class="event b-speaking start-900 length-4">خطاب رئيس اللجنة الوطنية(الحاج إسماعيل)</div>
-            <div class="event b-video start-930 end-1000 length-4">فيديو1 | الذكرى الاولى<span>/</span></div>
-            <div class="event b-speaking start-1030 end-1100 length-1">كلمات الضيوف(من الداخل والخارج) <span>/</span></div>
-            <div class="event b-speaking start-1030 end-1100 length-3">فيديو2 | الانجازات<span>/</span></div>
-
-            <div class="event b-speaking start-1130 end-1200 length-4">خطاب رئيس الحركة(ع.بن قرينة)<span>/</span></div>
-            <div class="event b-work start-1230 end-1300 length-1">جدول الاعمال <span>/</span></div>
-            <div class="event b-work start-1230 end-1300 length-1">لنظام الداخلي <span>/</span></div>
-            <div class="event b-speaking start-1230 end-1300 length-1">مكتب المؤتمر<span>/</span></div>
-
-            <div class="event b-speaking start-1230 end-1300 length-1"> تقديم تقرير عن الحركة من طرف رئيس الحركة (الادبي والمالي) والمصادقة عليه
-                <span>/</span></div>
-            <div class="event b-speaking start-1330 end-1330 length-4"> عرض ومناقشة القانون الاساسي، والمصادقة عليه
-
-                <span>/</span></div>
-
-            <div class="event b-eating-prayers text-dark start-1400 end-1600 length-4">رفع الجَلسة (الغداء و الصلوات)<span>/</span></div>
-
-            <div class="event b-work start-1630 end-2030 length-1">إستئناف الاشغال <span>/</span></div>
-            <div class="event b-speaking start-1630 end-2030 length-2">عرض ومناقشة السياسة العامة، والمصادقة عليها
-                <span>/</span></div>
-            <div class="event b-vote start-1630 end-2030 length-1">الانتخابات <span>/</span></div>
-
-            <div class="event text-dark border start-2100 end-2100 length-4">الاختتام <span>/</span></div>
-
-        </div>
-
-    </section>
-    </section>
-
-    {{-- schedule start--}}
 
 
     <!-- Start Contact Us -->
-<section class="mt-5 py-3">
+
+<section class="mt-5 py-3 bg-secondary-subtle">
     <div class="contact-infos mb-5 container ">
-        <h3 class=" text-center display-5">تواصلو معنا</h3>
+        <h3 class=" text-center display-5">تواصلوا معنا</h3>
 
             <div class="row pt-5 m-0">
                 <div class="col-lg-5 order-lg-0 order-1 mt-lg-0 mt-5">
                     <div class="card shadow border-0">
                         <div class="card-body p-2 vstack p-md-4">
-                            <div class="d-flex mb-3 align-items-center">
-                                <i class="fa-duotone fa-map me-2 fa-1x"></i>
-                                <span>
-                                <a href="https://rb.gy/z7kb4"
-                                   target="_blank"
-                                   class="text-decoration-none">
-                                    حركة البناء الوطني رقم 521 درارية، الجزائر
-                                </a>
-                                </span>
-                            </div>
-                            <p>
-                                <i class="fa-duotone fa-phone me-2 fa-1x"></i>
-                                <a href="tel:+00213540720803"
-                                   class="text-decoration-none">
-                                    00213540720803
-                                </a>
-                            </p>
-                            <p>
-                                <i class="fa-duotone fa-at me-2 fa-1x"></i>
-                                <a href="mailto:elbinaacongress@gmail.com"
-                                   class="text-decoration-none" >
-                                    elbinaacongress@gmail.com
-                                </a>
-                            </p>
 
                             <div id="alert"></div>
                             <form action="" method="POST" id="messages">
@@ -691,8 +728,6 @@
                                 </div>
 
                                 <button type="button" class="btn btn-primary mt-3 w-100" id="send">إرسال</button>
-
-
                             </form>
                         </div>
                     </div>
@@ -701,7 +736,7 @@
 
                 <div class=" col-lg-7 p-0 rounded-3 overflow-hidden">
                     <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12784.23117225001!2d2.8938568!3d36.769181!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fbb1f42a26a4b%3A0x9249d33297a3820a!2z2KfZhNmF2LHZg9iyINin2YTYr9mI2YTZiiDZhNmE2YXYpNiq2YXYsdin2Kog2LnYqNivINin2YTZhNi32YrZgSDYsdit2KfZhA!5e0!3m2!1sar!2sdz!4v1679792420128!5m2!1sar!2sdz"
-                            height="500"
+                            height="420"
                             style="border:0;"
                             allowfullscreen=""
                             loading="lazy"
@@ -711,6 +746,7 @@
         </div>
     </div>
 </section>
+
     <!-- End Contact Us -->
 
 
@@ -718,6 +754,7 @@
 
 @section('scripts')
 
+    <script src="https://unpkg.com/wavesurfer.js"></script>
 
 
 
@@ -800,7 +837,24 @@
             })
 
 
+        let wavesurfer = WaveSurfer.create({
+            container: '#waveform',
+            waveColor: '#D9DCFF',
+            progressColor: '#4353FF',
+            cursorColor: '#4353FF',
+            barWidth: 3,
+            barheight: 1,
+            autoCenter: true,
+            barRadius: 3,
+            cursorWidth: 1,
+            height: 50,
+            width: 150,
+            barGap: 3,
+        });
 
+
+        wavesurfer.load('{{asset('assets/js/1.mp3')}}');
+        wavesurfer.play();
 
 
     </script>

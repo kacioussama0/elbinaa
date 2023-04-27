@@ -1,46 +1,50 @@
 @extends('layouts.app')
 
 @section('content')
-    @if($errors->any())
+   <div class="container">
 
-        <div class="alert alert-danger">
+       @if($errors->any())
 
-            <ul>
-                @foreach($errors->all() as $error)
+           <div class="alert alert-danger">
 
-                    <li>{{$error}}</li>
+               <ul>
+                   @foreach($errors->all() as $error)
 
-                @endforeach
+                       <li>{{$error}}</li>
 
-            </ul>
+                   @endforeach
 
-        </div>
+               </ul>
 
-    @endif
-    <form action="{{route('faq.store')}}" method="POST">
+           </div>
 
-
-        @csrf
-
-        <div class="form-group">
-            <label for="question" class="form-label">السؤال</label>
-            <input type="text" name="question" id="question" class="form-control" placeholder="أدخل سؤال" value="{{old('question')}}">
-        </div>
+       @endif
+       <form action="{{route('faq.store')}}" method="POST">
 
 
+           @csrf
+
+           <div class="form-group mb-3">
+               <label for="question" class="form-label">السؤال</label>
+               <input type="text" name="question" id="question" class="form-control" placeholder="أدخل سؤال" value="{{old('question')}}">
+           </div>
 
 
 
-        <div class="form-group">
-            <label for="answer" class="form-label">جواب السؤال</label>
-            <textarea name="answer" id="answer"  class="form-control">
+
+
+           <div class="form-group mb-3">
+               <label for="answer" class="form-label">جواب السؤال</label>
+               <textarea name="answer" id="answer"  class="form-control">
                 {{old('answer')}}
             </textarea>
-        </div>
+           </div>
 
-        <button class="btn btn-primary w-100">إضافة سؤال</button>
+           <button class="btn btn-primary w-100">إضافة سؤال</button>
 
-    </form>
+       </form>
+
+   </div>
 @endsection
 
 

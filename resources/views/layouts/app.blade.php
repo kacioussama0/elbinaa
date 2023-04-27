@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.rtl.min.css')}}">
 
     <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
-    <script defer src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+    <script  src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
@@ -43,22 +43,22 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('categories') }}">التصنيفات</a>
+                            <a class="nav-link" href="{{ url('admin/categories') }}">التصنيفات</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('messages') }}">الرسائل</a>
+                            <a class="nav-link" href="{{ url('admin/messages') }}">الرسائل</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('posts') }}">المقالات</a>
+                            <a class="nav-link" href="{{ url('admin/posts') }}">المقالات</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('photos') }}">صور</a>
+                            <a class="nav-link" href="{{ url('admin/photos') }}">صور</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('faq') }}">اسئلني</a>
+                            <a class="nav-link" href="{{ url('admin/faq') }}">اسئلني</a>
                         </li>
                     </ul>
 

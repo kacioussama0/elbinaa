@@ -1,5 +1,5 @@
-let countDownDate = new Date("Mayo 06, 2023 10:00:00").getTime();
-
+let countDownDate = new Date("Mayo 06, 2023 09:00:00").getTime();
+let finalDate = new Date("Mayo 07, 2023 00:00:00").getTime();
 
 let counter = setInterval(() => {
   // Get Date Now
@@ -7,6 +7,9 @@ let counter = setInterval(() => {
 
   // Find The Date Difference Between Now And Countdown Date
   let dateDiff = countDownDate - dateNow;
+
+  let counterUp = finalDate - countDownDate ;
+
 
   // Get Time Units
   // let days = Math.floor(dateDiff / 1000 / 60 / 60 / 24);
@@ -20,8 +23,36 @@ let counter = setInterval(() => {
   document.querySelector("#minute").innerHTML = minutes < 10 ? `0${minutes}` : minutes;
   document.querySelector("#second").innerHTML = seconds < 10 ? `0${seconds}` : seconds;
 
-  if (dateDiff < 0) {
-    clearInterval(counter);
+  if (dateDiff <= 0) {
+      //
+      // days = Math.floor(counterUp / (1000 * 60 * 60 * 24));
+      // hours = Math.floor((counterUp % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      // minutes = Math.floor((counterUp % (1000 * 60 * 60)) / (1000 * 60));
+      // seconds = Math.floor((counterUp % (1000 * 60)) / 1000);
+      //
+      // if (document.querySelector("#day").innerHTML == days) {
+      //     document.querySelector("#day").innerHTML = days
+      // }
+      //
+      // if (document.querySelector("#hour").innerHTML == hours) {
+      //     document.querySelector("#hour").innerHTML = hours
+      // }
+      //
+      // if (document.querySelector("#minute").innerHTML == minutes) {
+      //     document.querySelector("#minute").innerHTML = minutes
+      // }
+      //
+      // if (document.querySelector("#second").innerHTML == seconds) {
+      //     document.querySelector("#second").innerHTML = seconds
+      // }
+
+      document.querySelector("#day").innerHTML = '00';
+      document.querySelector("#hour").innerHTML = '00';
+      document.querySelector("#minute").innerHTML = '00';
+      document.querySelector("#second").innerHTML = '00';
+
+      clearInterval(counter)
+
   }
 }, 1000);
 
@@ -29,20 +60,25 @@ let counter = setInterval(() => {
 
 
 ///////////////////////////////////////
-/* swiper*/
+/* GUESTs swiper*/
 ///////////////////////////////////////
 
-var swiper = new Swiper(".swiper", {
+let swiper = new Swiper(".swiper", {
     effect: "coverflow",
-    grabCursor: true,
     centeredSlides: true,
-    autoplay: true,
+    speed: 400,
+    rewind: true,
     coverflowEffect: {
         rotate: 0,
         stretch: 0,
         depth: 100,
         modifier: 3,
         slideShadows: true
+    },
+    spaceBetween: 30,
+    autoplay: {
+        delay: 4500,
+        disableOnInteraction: false
     },
     loop: true,
     pagination: {
@@ -66,9 +102,45 @@ var swiper = new Swiper(".swiper", {
 });
 
 ///////////////////////////////////////
+/* post swiper*/
+///////////////////////////////////////
+const seggar = new Swiper('.swiper-initialize', {
+    loop: true,
+    slidesPerView: "auto",
+    spaceBetween: 40,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: true
+    },
+    centeredSlides: true,
+    breakpoints: {
+        640: {
+            slidesPerView: 1
+        },
+        768: {
+            slidesPerView: 2
+        },
+        1024: {
+            slidesPerView: 2
+        },
+        1560: {
+            slidesPerView: 3
+        }
+    }
+
+});
+
+
+
+
+
+///////////////////////////////////////
 /* fqncybox*/
 ///////////////////////////////////////
 
 Fancybox.bind('[data-fancybox]', {
     //
 });
+
+
+
