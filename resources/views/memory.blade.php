@@ -26,11 +26,11 @@
             <div class="main-timeline-2 mt-5">
                 <div class="timeline-2 ">
                     <div class="card border-0 shadow">
-                        <img src="{{asset('assets/imgs/per1.jpeg')}}" class="card-img-top"
+                        <img src="{{asset('assets/imgs/per1.webp')}}" class="card-img-top"
                              alt="Responsive image">
                         <div class="card-body p-3 lh-lg">
                             <h4 class=" mb-2"> الشيخ المجاهد مصطفى بلمهدي مواليد</h4>
-                            <p class="text-lighter mb-3"><i class="far fa-clock " aria-hidden="true"></i> 1943</p>
+                            <p class="text-lighter mb-3"><i class="fa-duotone fa-clock " aria-hidden="true"></i> 1943</p>
                             <p class="mb-0">لمرحوم مصطفى _ هو ثالث ثلاثة: <span class="text-primary">نحناح</span> ؛ <span class="text-primary">بوسلماني</span> رحمهم الله جميعا_ من مواليد 1943 بالبليدة؛ أكمل دراسته الابتدائية بمدرسة الإرشاد التابعة للحركة الوطنية.</p>
                             <ul>
                                 <li>شارك مع إخوانه المجاهدين ببلدته (ولاية البليدة تبعد عن الجزائر العاصمة بنحو 50 كلم) في ثورة التحرير المجيدة ضد الاستعمار الفرنسي 1954 - 1962.</li>
@@ -42,11 +42,11 @@
                 </div>
                 <div class="timeline-2 right-2">
                     <div class="card border-0 shadow">
-                        <img src="{{asset('assets/imgs/per2.jpeg')}}" class="card-img-top"
+                        <img src="{{asset('assets/imgs/per2.webp')}}" class="card-img-top"
                              alt="Responsive image">
                         <div class="card-body p-3 lh-lg ">
                             <h4 class="fw-bold mb-2">النضال والعمل السياسي العلني</h4>
-                            <p class="text-muted mb-4"><i class="far fa-clock" aria-hidden="true"></i> 1990</p>
+                            <p class="text-muted mb-4"><i class="fa-duotone fa-clock" aria-hidden="true"></i> 1990</p>
                             <div class="mb-0">
                                 <ul>
                                     <li>عارض، رفقة عدد من قيادات التيار الإسلامي منهم: الشهيد الذبيح محمد بوسليماني (من ضحايا الارهاب) والشيخ محفوظ نحناح و الاخوة: الطاهر زيشي، رشيد كسور، علي بومعيزي، محمد حزي، محمد لقواسي، محمد بن ابراهيم، محمد قراط، عبد الكريم رايس وغيرهم... الميثاق الوطني (1976) والتوجهات الاشتراكية للرئيس الجزائري الراحل المرحوم هواري بومدين، ما دفعه إلى اعتقالهم وزجهم في السجون</li>
@@ -59,11 +59,11 @@
                 </div>
                 <div class="timeline-2 ">
                     <div class="card border-0 shadow">
-                        <img src="{{asset('assets/imgs/per3.jpeg')}}" class="card-img-top"
+                        <img src="{{asset('assets/imgs/per3.webp')}}" class="card-img-top"
                              alt="Responsive image">
                         <div class="card-body p-4 lh-lg">
                             <h4 class="fw-bold mb-2">الإنخراط في المؤسسات الرسمية للدولة</h4>
-                            <p class="text-muted mb-3"><i class="far fa-clock" aria-hidden="true"></i> 1998 و 2001</p>
+                            <p class="text-muted mb-3"><i class="fa-duotone fa-clock" aria-hidden="true"></i> 1998 و 2001</p>
                             <p class="mb-0">    عين لاحقاً المرحوم بلمهدي عضواً في مجلس الأمة(غرفة الشيوخ) "سيناتور" من طرف رئيس الجمهورية، ما بين 1998 و 2001.
                             </p>
                         </div>
@@ -71,11 +71,11 @@
                 </div>
                 <div class="timeline-2 right-2">
                     <div class="card border-0 shadow">
-                        <img src="{{asset('assets/imgs/per4.jpeg')}}" class="card-img-top"
+                        <img src="{{asset('assets/imgs/per4.webp')}}" class="card-img-top"
                              alt="Responsive image">
                         <div class="card-body p-4">
                             <h4 class="fw-bold mb-2">تأسيس حركة البناء الوطني</h4>
-                            <p class="text-muted mb-3"><i class="far fa-clock me-2" aria-hidden="true"></i>2013</p>
+                            <p class="text-muted mb-3"><i class="fa-duotone fa-clock me-2" aria-hidden="true"></i>2013</p>
                             <p class="mb-0 lh-lg">   وفي عام 2008، وقعت خلافات داخل الحركة اضطرته الى الانسحاب وتأسيس "حركة البناء الوطني" مع ثلة من القيادات في عام 2013.</p>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                         </iframe>
                         <div class="card-body p-4 lh-lg">
                             <h4 class="fw-bold mb-2">ذكرى وفاته</h4>
-                            <p class="text-muted mb-3"><i class="far fa-clock me-2" aria-hidden="true"></i>07 ماي 2022</p>
+                            <p class="text-muted mb-3"><i class="fa-duotone fa-clock me-2" aria-hidden="true"></i>07 ماي 2022</p>
                             <p class="mb-0"> توفي رحمهة الله السنة الماضية (2022)، وشاء القدر أن يتوفى في يوم مولده (السابع من مايو/أيار)".</p>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                     <div class="card border-0 shadow overflow-hidden">
                         <div class="card-body p-4 lh-lg">
                             <h4 class="fw-bold mb-2">من الشخصيات المهمة في جنازته</h4>
-                            <p class="text-muted"><i class="far fa-hands-praying me-2" aria-hidden="true"></i>رحمة الله عليه</p>
+                            <p class="text-muted"><i class="fa-duotone fa-hands-praying me-2" aria-hidden="true"></i>رحمة الله عليه</p>
                             <ul style="padding: 1rem !important">
                                 <li>الامين العام لحزب جبهة التحرير الوطني.
                                     الاستاذ ابو الفضل بعجي</li>

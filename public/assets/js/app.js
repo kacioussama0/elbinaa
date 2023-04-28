@@ -24,28 +24,6 @@ let counter = setInterval(() => {
   document.querySelector("#second").innerHTML = seconds < 10 ? `0${seconds}` : seconds;
 
   if (dateDiff <= 0) {
-      //
-      // days = Math.floor(counterUp / (1000 * 60 * 60 * 24));
-      // hours = Math.floor((counterUp % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      // minutes = Math.floor((counterUp % (1000 * 60 * 60)) / (1000 * 60));
-      // seconds = Math.floor((counterUp % (1000 * 60)) / 1000);
-      //
-      // if (document.querySelector("#day").innerHTML == days) {
-      //     document.querySelector("#day").innerHTML = days
-      // }
-      //
-      // if (document.querySelector("#hour").innerHTML == hours) {
-      //     document.querySelector("#hour").innerHTML = hours
-      // }
-      //
-      // if (document.querySelector("#minute").innerHTML == minutes) {
-      //     document.querySelector("#minute").innerHTML = minutes
-      // }
-      //
-      // if (document.querySelector("#second").innerHTML == seconds) {
-      //     document.querySelector("#second").innerHTML = seconds
-      // }
-
       document.querySelector("#day").innerHTML = '00';
       document.querySelector("#hour").innerHTML = '00';
       document.querySelector("#minute").innerHTML = '00';
